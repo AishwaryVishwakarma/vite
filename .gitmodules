@@ -1,3 +1,4 @@
 [submodule "configs"]
 	path = configs
 	url = https://github.com/AishwaryVishwakarma/configs
+	branch = main
