@@ -30,6 +30,7 @@ eslint.config.js
 
 # Jest
 jest.config.ts
+coverage
 
 # Typescript
 tsconfig.app.json
