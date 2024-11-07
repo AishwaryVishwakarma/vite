@@ -1,0 +1,36 @@
+name: Test and Lint
+
+on:
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  test-and-lint:
+    name: Run Tests and Lint
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '21.x'
+
+      - name: Install dependencies
+        run: npm install --force
+
+      - name: Run Linting
+        run: npm run lint
+
+      - name: Run Tests
+        run: npm run test -- --ci --coverage
+
+      - name: Upload Coverage
+        if: success()
+        uses: actions/upload-artifact@v3
+        with:
+          name: code-coverage
+          path: ./coverage
