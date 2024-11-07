@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "prepare": "git submodule update --init --recursive --remote && node temp/copy.js",
+    "prepare": "git submodule update --init --recursive --remote && node configs/copy.cjs",
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
