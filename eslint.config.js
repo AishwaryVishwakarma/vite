@@ -9,7 +9,11 @@ import baseConfig from './configs/eslint.base.config.js';
 export default tseslint.config(
   {ignores: ['dist']},
   {
-    extends: [js.configs.recommended, ...tseslint.configs.recommended],
+    extends: [
+      js.configs.recommended,
+      ...tseslint.configs.recommended,
+      baseConfig,
+    ],
     files: ['**/*.{ts,tsx}'],
     languageOptions: {
       ecmaVersion: 2020,
@@ -18,12 +22,8 @@ export default tseslint.config(
     plugins: {
       'react-hooks': reactHooks,
       'react-refresh': reactRefresh,
-      // Extend plugins from base config
-      ...baseConfig.plugins,
     },
     rules: {
-      // Extend rules from base config
-      ...baseConfig.rules,
       ...reactHooks.configs.recommended.rules,
       'react-refresh/only-export-components': [
         'warn',
