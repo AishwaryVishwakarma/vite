@@ -25,17 +25,8 @@ dist-ssr
 *.sln
 *.sw?
 
-# Eslint
-eslint.config.js
-
 # Jest
-jest.config.ts
 coverage
 
-# Typescript
-tsconfig.app.json
-tsconfig.json
-tsconfig.node.json
-
-# Vite
-vite.config.ts
+# Prettier
+.prettierrc
