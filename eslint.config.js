@@ -18,20 +18,8 @@ export default tseslint.config(
     plugins: {
       'react-hooks': reactHooks,
       'react-refresh': reactRefresh,
-      // Include any other plugins from the base config
+      // Extend plugins from base config
       ...baseConfig.plugins,
-    },
-    env: {
-      // Extend the env settings from base config
-      ...baseConfig.env,
-      node: true, // You can also add project-specific environments
-    },
-    parserOptions: {
-      // Extend parserOptions from base config
-      ...baseConfig.parserOptions,
-      ecmaFeatures: {
-        jsx: true,
-      },
     },
     rules: {
       // Extend rules from base config
